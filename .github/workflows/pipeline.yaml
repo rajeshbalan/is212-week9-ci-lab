@@ -80,7 +80,7 @@ jobs:
           cd ..
           bash smoke.sh http://localhost:5000 || { cat app.log; exit 1; }
 
-e2e:
+  e2e:
     needs: package
     runs-on: ubuntu-latest
     steps:
@@ -109,7 +109,7 @@ e2e:
             || { cat app.log; exit 1; }
 
   staging:
-    needs: smoke
+    needs: [ smoke, e2e ]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     environment: staging
