@@ -15,3 +15,10 @@ htmlcov/
 .vscode/
 .idea/
 .DS_Store
+
+# added manually
+__pycache__/
+build/
+staged/
+*.zip
+app.log
