@@ -107,7 +107,7 @@ e2e:
           done
           python -m unittest discover -s e2e -v \
             || { cat app.log; exit 1; }
-            
+
   staging:
     needs: smoke
     if: github.event_name == 'push'
